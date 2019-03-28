@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Map Practice</title>
-  <meta name="description" content="Making an app with Google Maps API">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <!-- 1. Access Google Maps JS API -->
-  <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt9POlQ6A2x8gNEMUudRgqA-Fz5daKY2I&callback=initMap" async
-      defer></script>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Map Practice</title>
+    <meta name="description" content="Making an app with Google Maps API" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- 1. Access Google Maps JS API -->
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVzwG8Zv8woCdsnD01U95sa59nUDS5DnU&callback=initMap"
+    ></script>
+  </head>
 
-<body>
+  <body>
+    
+    <!-- So weird: this doesn't work if I put the mapDiv in another div -->
+    <span class="mapContainer">
+      <!-- 2. Make a div to hold my map -->
+      <div id="map"></div>
+    </div>
 
-  <!-- 2. Make a div to hold my map -->
-  <div id="map"></div>
 
-  <!-- 3. Write a script to create my map -->
-  <!-- a. Create a map options object literal, where I define initial extent of map and any initial behavior -->
-  <!-- b. Create an object of google.maps.Map class -->
-  <!-- c. Pass the map div and MapOptions object into the class constructor -->
-  <script></script>
-</body>
-
+    <!-- 3. Write a script to create my map -->
+    <!-- a. Create a map options object literal, where I define initial extent of map and any initial behavior -->
+    <!-- b. Create an object of google.maps.Map class -->
+    <!-- c. Pass the map div and MapOptions object into the class constructor -->
+    <script src="main.js"></script>
+  </body>
 </html>
