@@ -17,18 +17,19 @@ function initialize() {
 function changeTerrain(map) {
   // goal with this function: link buttons with event handlers and sets map type appropriately
   document.getElementById('btnTerrain').addEventListener("click", function() {
-    map.setMapTypeId(google.maps.mapTypeId.TERRAIN);
+    map.setMapTypeId('terrain');
   });
   document.getElementById("btnRoadmap").addEventListener("click", function() {
-    map.setMapTypeId(google.maps.mapTypeId.ROADMAP);
+    map.setMapTypeId('roadmap');
   });
   document.getElementById("btnSatellite").addEventListener("click", function() {
-    map.setMapTypeId(google.maps.mapTypeId.SATELLITE);
+    map.setMapTypeId('satellite');
   });
   document.getElementById("btnHybrid").addEventListener("click", function() {
-    map.setMapTypeId(google.maps.mapTypeId.HYBRID);
+    map.setMapTypeId('hybrid');
   });
 } // end function changeTerrain
 
 // google.maps.event.addDomListener(window, "load", initialize());
 document.addEventListener("load", initialize());
+
