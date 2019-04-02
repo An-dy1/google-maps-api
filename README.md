@@ -1,7 +1,8 @@
 <h3>Instantiating important stuff:</h3>
 
 <h2>Make a map:</h2>
-```
+
+~~~~
 function initialize() {
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 11
@@ -11,7 +12,7 @@ function initialize() {
   map.setCenter(latLong);
 
   changeTerrain(map);
-```
+~~~~
 
 <h2>Make a marker:</h2>
 ```
