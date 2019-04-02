@@ -2,35 +2,36 @@
 function initialize() {
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 11,
+    disableDefaultUI: true,
+    // all but the mapTypeControl is enabled (because our buttons are doing that job)
     zoomControl: true,
-    zoomControlOptions: {
-        style: google.maps.ZoomControlStyle.MEDIUM,
-        position: google.maps.ControlPosition.BOTTOM_LEFT
-    }
-    // disableDefaultUI: true,
-    // zoomControl: true,
-    // panControl: true,
-    // mapTypeControl: true,
-    // scaleControl: true,
-    // streetViewControl: true,
-    // rotateControl: true,
-    // overviewMapControl: true 
+    panControl: true,
+    scaleControl: true,
+    streetViewControl: true,
+    rotateControl: true,
+    overviewMapControl: true
   });
 
   var latLong = new google.maps.LatLng(39.0997, -94.5786);
   map.setCenter(latLong);
 
-  changeTerrain(map);
+  changeTerrain(map); // this is called addButtons(map) in the tutorial
+
+  drawMarkers(map);
+//   drawPolyline(map);
+//   drawEditablePolygon(map);
+//   drawDraggableRectangle(map);
+//   drawCircle(map);
 } // end function initialize
 
 // this changeTerrain function receives the map object created in the initialize function
 function changeTerrain(map) {
   // goal with this function: link buttons with event handlers and sets map type appropriately
-  document.getElementById('btnTerrain').addEventListener("click", function() {
-    map.setMapTypeId('terrain');
-  });
   document.getElementById("btnRoadmap").addEventListener("click", function() {
     map.setMapTypeId('roadmap');
+  });
+  document.getElementById('btnTerrain').addEventListener("click", function() {
+    map.setMapTypeId('terrain');
   });
   document.getElementById("btnSatellite").addEventListener("click", function() {
     map.setMapTypeId('satellite');
@@ -39,6 +40,11 @@ function changeTerrain(map) {
     map.setMapTypeId('hybrid');
   });
 } // end function changeTerrain
+
+function drawMarkers(map) {
+    // TODO: figure out path to image I need
+    var image = "./images/skateboard.svg"
+}
 
 // google.maps.event.addDomListener(window, "load", initialize());
 document.addEventListener("load", initialize());
