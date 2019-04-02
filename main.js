@@ -43,7 +43,21 @@ function changeTerrain(map) {
 
 function drawMarkers(map) {
     // TODO: figure out path to image I need
-    var image = "./images/skateboard.svg"
+    var image = '/images/skateboarding-512.png';
+
+    var mackenMarker = new google.maps.Marker({
+        icon: image,
+        position: new google.maps.LatLng(39.148627, -94.567244),
+        map: map,
+        title: "Macken Wheel Park"
+    });
+    
+    var tonkaMarker = new google.maps.Marker({
+        icon: image,
+        position: new google.maps.LatLng(39.179877, -94.509405),
+        map: map,
+        title: "Winnetonka HS parking lot"
+    });
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
