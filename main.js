@@ -42,8 +42,8 @@ function changeTerrain(map) {
 } // end function changeTerrain
 
 function drawMarkers(map) {
-    // TODO: figure out path to image I need
-    var image = '/images/skateboarding-512.png';
+    var markers = [];
+    var image = './images/skateboarding-512.png';
 
     var mackenMarker = new google.maps.Marker({
         icon: image,
@@ -51,15 +51,18 @@ function drawMarkers(map) {
         map: map,
         title: "Macken Wheel Park"
     });
-    return(mackenMarker);
+    markers.push(mackenMarker);
     
-    // var tonkaMarker = new google.maps.Marker({
-    //     icon: image,
-    //     position: new google.maps.LatLng(39.179877, -94.509405),
-    //     map: map,
-    //     title: "Winnetonka HS parking lot"
-    // });
-    // markers.push(tonkaMarker);
+    var tonkaMarker = new google.maps.Marker({
+        icon: image,
+        position: new google.maps.LatLng(39.179877, -94.509405),
+        map: map,
+        title: "Winnetonka HS parking lot"
+    });
+    markers.push(tonkaMarker);
+
+    var markerCluster = new MarkerClusterer(map, markers);
+    return markerCluster;
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
