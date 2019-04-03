@@ -43,7 +43,7 @@ function changeTerrain(map) {
 
 function drawMarkers(map) {
     var markers = [];
-    var image = './images/skateboarding-512.png';
+    var image = './images/new-skateboard.png';
 
     var mackenMarker = new google.maps.Marker({
         icon: image,
@@ -52,6 +52,8 @@ function drawMarkers(map) {
         title: "Macken Wheel Park"
     });
     markers.push(mackenMarker);
+    // Another way to do this:
+    // mackenMarker.setMap(map);
     
     var tonkaMarker = new google.maps.Marker({
         icon: image,
