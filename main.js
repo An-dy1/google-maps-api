@@ -51,13 +51,15 @@ function drawMarkers(map) {
         map: map,
         title: "Macken Wheel Park"
     });
+    return(mackenMarker);
     
-    var tonkaMarker = new google.maps.Marker({
-        icon: image,
-        position: new google.maps.LatLng(39.179877, -94.509405),
-        map: map,
-        title: "Winnetonka HS parking lot"
-    });
+    // var tonkaMarker = new google.maps.Marker({
+    //     icon: image,
+    //     position: new google.maps.LatLng(39.179877, -94.509405),
+    //     map: map,
+    //     title: "Winnetonka HS parking lot"
+    // });
+    // markers.push(tonkaMarker);
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
