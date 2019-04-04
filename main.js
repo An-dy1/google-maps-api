@@ -12,13 +12,13 @@ function initialize() {
     overviewMapControl: true
   });
 
-  var latLong = new google.maps.LatLng(39.0997, -94.5786);
+  var latLong = new google.maps.LatLng(39.1097, -94.5786);
   map.setCenter(latLong);
 
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
   drawMarkers(map);
-//   drawPolyline(map);
+  drawPolyline(map);
 //   drawEditablePolygon(map);
 //   drawDraggableRectangle(map);
 //   drawCircle(map);
@@ -63,8 +63,29 @@ function drawMarkers(map) {
     });
     markers.push(tonkaMarker);
 
+
+    var cliffMarker = new google.maps.Marker({
+        icon: image,
+        position: new google.maps.LatLng(39.115830, -94.545145),
+        map: map,
+        title: "Cliff Drive"
+    });
+    markers.push(cliffMarker);
+
+    var smithvilleMarker = new google.maps.Marker({
+        icon: image,
+        position: new google.maps.LatLng(39.447035, -94.529748),
+        map: map,
+        title: "Smithville paved trails"
+    })
+    markers.push(smithvilleMarker);
+
     var markerCluster = new MarkerClusterer(map, markers);
     return markerCluster;
+}
+
+function drawPolyline() {
+    
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
