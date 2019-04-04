@@ -1,3 +1,28 @@
+<h1>My notes on using the Google Maps JS API</h1>
+
+<h3>To add data to maps, there are two options:</h3>
+
+1. Overlays
+    - Create the data ourselves programmatically, possibly in response to user input
+    Examples:
+    - Markers *
+    - Polylines
+    - Polygons
+    - Circles
+    - InfoWindows *
+    - Ground overlays
+    - Custom overlays
+
+2. Layers
+    - Bring in data from somewhere else
+    Examples:
+    - KML Layers
+    - Weather/Cloud
+    - Heatmap
+    - Traffic
+    - Transit
+    - Bicycle
+
 <h3>Instantiating important stuff:</h3>
 
 <h2>Make a map:</h2>
@@ -34,6 +59,7 @@ var pathCoordinates = [
 ];
 var pathToCenter = new google.maps.Polyline({
     path: pathCoordinates,
+    geodesic: false;
     strokeColor: '#fff',
     strokeOpacity: 1.0,
     strokeWeight: 2
@@ -41,42 +67,68 @@ var pathToCenter = new google.maps.Polyline({
 pathToCenter.setMap(map);
 ~~~~
 
+<h2>Make an editable polygon:</h2>
+
+~~~~
+function drawEditablePolygon(map) {
+    var natureCoords = [
+        new google.maps.LatLng(0, 1),
+        new google.maps.LatLng(0, 2),
+        new google.maps.LatLng(0, 3),
+        new google.maps.LatLng(0, 4),
+    ];
+
+    var natureArea = new google.maps.Polygon({
+        path: natureCoords,
+        strokeColor: "#FFFFFF",
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: "#00FF00",
+        fillOpacity: 0.6,
+        editable: true
+    });
+
+    natureArea.setMap(map);
+}
+~~~~
+
 <h2>Draw a circle</h2>
 
 ~~~~
-var circle = new google.maps.Circle({
-    map: map,
-    center: new google.maps.LatLng (0, 0),
-    fillColor: "#92D050",
-    fillOpacity: 0.7,
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 2
-});
-circle.setRadius(25);
+function drawCircle(map) {
+    var circle = new google.maps.Circle({
+        map: map,
+        center: new google.maps.LatLng (0, 0),
+        fillColor: "#92D050",
+        fillOpacity: 0.7,
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.8,
+        strokeWeight: 2
+    });
+    circle.setRadius(25);
+}
 ~~~~
 
-<h3>To add data to maps, there are two options:</h3>
+<h2>Draw a draggable rectangle</h2>
 
-1. Overlays
-    - Create the data ourselves programmatically, possibly in response to user input
-    Examples:
-    - Markers *
-    - Polylines
-    - Polygons
-    - Circles
-    - InfoWindows *
-    - Ground overlays
-    - Custom overlays
+~~~~
+function drawDraggableRectangle(map) {
+    var bounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(52.340308, -3,052557),
+        new google.maps.LatLng(52.340799, -3.050647)
+    );
+    var rectangle = new google.maps.Rectangle({
+        bounds: bounds,
+        map: map,
+        fillColor: "#00FF00",
+        fillOpacity: 0.6,
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        draggable: true
+    });
+}
+~~~~
 
-2. Layers
-    - Bring in data from somewhere else
-    Examples:
-    - KML Layers
-    - Weather/Cloud
-    - Heatmap
-    - Traffic
-    - Transit
-    - Bicycle
 
 
