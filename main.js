@@ -18,10 +18,7 @@ function initialize() {
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
   drawMarkers(map);
-  //   drawPolyline(map);
-  //   drawEditablePolygon(map);
-  //   drawDraggableRectangle(map);
-  //   drawCircle(map);
+
 } // end function initialize
 
 // this changeTerrain function receives the map object created in the initialize function
