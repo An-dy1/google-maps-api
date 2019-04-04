@@ -1,6 +1,6 @@
 <h1>My notes on using the Google Maps JS API</h1>
 
-<h3>To add data to maps, there are two options:</h3>
+<h2>To add data to maps, there are two options:</h2>
 
 1. Overlays
 
@@ -24,9 +24,9 @@
    - Transit
    - Bicycle
 
-<h3>Instantiating important stuff:</h3>
+<h2>Instantiating important stuff:</h2>
 
-<h2>Make a map:</h2>
+<h3>Make a map:</h3>
 
 ```
 function initialize() {
@@ -40,7 +40,7 @@ function initialize() {
   changeTerrain(map);
 ```
 
-<h2>Make a marker:</h2>
+<h3>Make a marker:</h3>
 
 ```
 var centerMarker = new.google.maps.Marker({
@@ -51,7 +51,7 @@ var centerMarker = new.google.maps.Marker({
 });
 ```
 
-<h2>Make a polyline (polygon is very similar):</h2>
+<h3>Make a polyline (polygon is very similar):</h3>
 
 ```
 var pathCoordinates = [
@@ -68,7 +68,7 @@ var pathToCenter = new google.maps.Polyline({
 pathToCenter.setMap(map);
 ```
 
-<h2>Make an editable polygon:</h2>
+<h3>Make an editable polygon:</h3>
 
 ```
 function drawEditablePolygon(map) {
@@ -83,7 +83,7 @@ function drawEditablePolygon(map) {
         path: natureCoords,
         strokeColor: "#FFFFFF",
         strokeOpacity: 0.8,
-        strokeWeight: 2,
+        strokeWeight: 3,
         fillColor: "#00FF00",
         fillOpacity: 0.6,
         editable: true
@@ -93,7 +93,7 @@ function drawEditablePolygon(map) {
 }
 ```
 
-<h2>Draw a circle</h2>
+<h3>Draw a circle</h3>
 
 ```
 function drawCircle(map) {
@@ -104,13 +104,13 @@ function drawCircle(map) {
         fillOpacity: 0.7,
         strokeColor: "#FF0000",
         strokeOpacity: 0.8,
-        strokeWeight: 2
+        strokeWeight: 3
     });
     circle.setRadius(25);
 }
 ```
 
-<h2>Draw a draggable rectangle</h2>
+<h3>Draw a draggable rectangle</h3>
 
 ```
 function drawDraggableRectangle(map) {
@@ -131,7 +131,7 @@ function drawDraggableRectangle(map) {
 }
 ```
 
-<h2>Make a ground overlay</h2>
+<h3>Make a ground overlay</h3>
 
 <p>Note: the two bounds refer to the southwest and northeast corners of a rectangular overlay.</p>
 <p>Note: custom overlays are also an option, but require some elbow grease.</p>
@@ -149,3 +149,10 @@ function drawGroundOverlay(map) {
     groundOverlay.setMap(map);
 };
 ```
+
+<h2>KML Layers and GeoRSS</h2>
+
+<ul>
+    <li>Layers represent collections of objects with a common association</li>
+    <li>They are manipulated as a single unit</li>
+</ul>

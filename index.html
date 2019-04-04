@@ -7,6 +7,7 @@
     <title>Map Practice</title>
     <meta name="description" content="Making an app with Google Maps API" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Ubuntu" rel="stylesheet"> 
     <link rel="stylesheet" href="styles.css" />
     <!-- 1. Access Google Maps JS API -->
     <script
@@ -16,17 +17,30 @@
   </head>
 
   <body>
-    <div class="buttonContainer">
-      <button id="btnRoadmap">Road</button>
-      <button id="btnTerrain">Terrain</button>
-      <button id="btnSatellite">Satellite</button>
-      <button id="btnHybrid">Mash up</button>
+
+    <div class="header">
+      <div class="titleBanner">
+        <h1 class="title">Longboard Locales - KC</h1>
+      </div>
     </div>
-    <!-- So weird: this doesn't work if I put the mapDiv in another div -->
-    <span class="mapContainer">
-      <!-- 2. Make a div to hold my map -->
-      <div id="map"></div>
-    </span>
+
+    <div class="mapContainer">
+      <div class="buttonContainer">
+        <button id="btnRoadmap" class="mapTypeButton">Road</button>
+        <button id="btnTerrain" class="mapTypeButton">Terrain</button>
+        <button id="btnSatellite" class="mapTypeButton">Satellite</button>
+        <button id="btnHybrid" class="mapTypeButton">Mash up</button>
+      </div>
+      <!-- So weird: this doesn't work if I put the mapDiv in another div -->
+      <span class="mapSpan">
+        <!-- 2. Make a div to hold my map -->
+        <div id="map"></div>
+      </span>
+    </div>
+
+    <div class="footer">
+      <p>Made with love by Andy</p>
+    </div>
 
     <!-- 3. Write a script to create my map -->
     <!-- a. Create a map options object literal, where I define initial extent of map and any initial behavior -->
