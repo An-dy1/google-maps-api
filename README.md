@@ -135,7 +135,8 @@ function drawDraggableRectangle(map) {
 
 <p>Note: the two bounds refer to the southwest and northeast corners of a rectangular overlay.</p>
 <p>Note: custom overlays are also an option, but require some elbow grease.</p>
-~~~~
+
+```
 function drawGroundOverlay(map) {
     var imageBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(39.1097, -94.5786),
@@ -147,4 +148,4 @@ function drawGroundOverlay(map) {
     );
     groundOverlay.setMap(map);
 };
-~~~~
+```
