@@ -7,7 +7,9 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(45deg, #8F597D, #3D3C53);
+  background: linear-gradient(35deg, #8F597D, #3D3C53);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #map {
@@ -31,4 +33,19 @@ body {
 
 .footer {
     background-color: #3D3C53;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+}
+
+.footerText p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.heart {
+    color: #e25555;
 }
