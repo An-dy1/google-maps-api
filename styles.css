@@ -7,7 +7,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(35deg, #8F597D, #3D3C53);
+  background: linear-gradient(35deg, #8F597D, #3D3C53, #8F597D, #3D3C53);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -28,7 +28,11 @@ body {
     font-family: 'Luckiest Guy', cursive;
     font-size: 56px;
     margin: 5rem;
-    text-shadow: 4px 4px #3D3C53;
+    text-shadow: 6px 6px #3D3C53;
+}
+
+.title:hover {
+    color: #ff4b3e;
 }
 
 .footer {
@@ -48,4 +52,16 @@ body {
 
 .heart {
     color: #e25555;
+}
+
+.footerLink,
+.footerLink:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footerLink:hover {
+    background: -webkit-linear-gradient(45deg,#b10f2e, #ff4b3e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
