@@ -13,9 +13,13 @@ function initialize() {
   });
 
   var latLong = new google.maps.LatLng(39.1097, -94.5786);
+
   map.setCenter(latLong);
 
   changeTerrain(map); // this is called addButtons(map) in the tutorial
+
+//   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
+//   addKmlLayer(map);
 
   drawMarkers(map);
 

@@ -32,13 +32,13 @@ body {
 }
 
 /* eh, maybe: */
-.title:hover {
+/* .title:hover {
     text-shadow: none;
     background: -webkit-linear-gradient(#b10f2e, #ff4b3e);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+} */
 
 .footer {
     background-color: #3D3C53;

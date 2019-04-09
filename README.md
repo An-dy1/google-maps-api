@@ -156,3 +156,56 @@ function drawGroundOverlay(map) {
     <li>Layers represent collections of objects with a common association</li>
     <li>They are manipulated as a single unit</li>
 </ul>
+
+<h4>What is KML?</h4>
+
+<ul>
+    <li>Keyhole Markup Language</li>
+    <li>Used to encode and display geographic data</li>
+    <li>Terrain and elevation data</li>
+    <li>Historical imagery</li>
+    <li>Based on XML standard</li>
+    <li>Must use google.maps.KmlLayer class</li>
+    <li>KmlLayerOptions includes map control, preserveViewPort option, and suppressInfoWindows</li>
+    <li>KmlLayerMetaData includes name, description, author, etc.</li>
+</ul>
+
+<h4>Example:</h4>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+    <Placemark>
+    <name>Longboard Locale</name>
+    <description>This is where we longboard</description>
+        <Point>
+            <coordinates>
+                -50, 52, 0
+            </coordinates>
+        </Point>
+    </Placemark>
+</kml>
+```
+
+<h4>More examples:</h4>
+
+<ul>
+    <li>Google Earth gallery</li>
+    <li>US Census data</li>
+    <li>Global Administrative Areas</li>
+    <li>"filetype:kml 'Lord of the Rings'"</li>
+</ul>
+
+<h4>What is GeoRSS?</h4>
+
+<ul>
+    <li>Emerging (?) standard for encoding location as part of a web feed</li>
+    <li>Google maps can read GeoRSS feeds and use KML data to layer it on the map</li>
+</ul>
+
+```
+function addKmlLayer(map) {
+    var katyTrailLayer = new google.maps.KmlLayer('http://veloroutes.org/r/40124/kml');
+    katyTrailLayer.setMap(map);
+}
+```
