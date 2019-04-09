@@ -10,7 +10,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(125deg, #c178a9 15%, #3D3C53);
+  background: linear-gradient(to bottom right, #3db6bf, #494682 65%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -25,6 +25,11 @@ body {
     margin-left: 25vw;
 }
 
+#navbar {
+    display: flex;
+    justify-content: center;
+}
+
 .title {
     color: #fff;
     text-align: center;
@@ -32,6 +37,13 @@ body {
     font-size: 56px;
     margin: 5rem;
     text-shadow: 6px 6px #3D3C53;
+}
+
+.about {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* eh, maybe: */
@@ -44,7 +56,7 @@ body {
 } */
 
 .footer {
-    background-color: #3D3C53;
+    background-color: #c178a9;
     color: #fff;
     bottom: 0;
     width: 100%;
