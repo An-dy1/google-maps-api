@@ -2,12 +2,15 @@
 font-family: 'Luckiest Guy', cursive;
 font-family: 'Ubuntu', sans-serif; */
 
+/* Colors:
+#c178a9 */
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(125deg, #8F597D, #3D3C53);
+  background: linear-gradient(125deg, #c178a9 15%, #3D3C53);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
