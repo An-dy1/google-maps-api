@@ -7,7 +7,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(35deg, #8F597D, #3D3C53, #8F597D, #3D3C53);
+  background: linear-gradient(125deg, #8F597D, #3D3C53);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -31,8 +31,13 @@ body {
     text-shadow: 6px 6px #3D3C53;
 }
 
+/* eh, maybe: */
 .title:hover {
-    color: #ff4b3e;
+    text-shadow: none;
+    background: -webkit-linear-gradient(#b10f2e, #ff4b3e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .footer {
@@ -62,6 +67,7 @@ body {
 
 .footerLink:hover {
     background: -webkit-linear-gradient(45deg,#b10f2e, #ff4b3e);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
