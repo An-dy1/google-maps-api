@@ -89,7 +89,7 @@ function drawMarkers(map) {
 // TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
 function drawBikeRoutes(map) {
     document.getElementById('showBike').addEventListener("click", function() {
-        var bikeRouteLayer = new google.maps.BicyclingLayer
+        var bikeRouteLayer = new google.maps.BicyclingLayer;
         bikeRouteLayer.setMap(map);
     });
 }

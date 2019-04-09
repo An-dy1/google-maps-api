@@ -209,3 +209,15 @@ function addKmlLayer(map) {
     katyTrailLayer.setMap(map);
 }
 ```
+
+<h2>Adding GeoJSON data</h2>
+
+```
+function addGeoJSONDataLayer(map) {
+    map.data.loadGeoJson('/add/path/here.json');
+    map.data.setStyle({
+        icon: '/set/path/here.pgn',
+        strokeColor: 'aliceblue'
+    })
+}
+```
