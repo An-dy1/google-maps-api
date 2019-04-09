@@ -18,6 +18,8 @@ function initialize() {
 
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
+  drawBikeRoutes(map);
+
 //   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
 //   addKmlLayer(map);
 
@@ -82,6 +84,14 @@ function drawMarkers(map) {
 
   var markerCluster = new MarkerClusterer(map, markers);
   return markerCluster;
+}
+
+// TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
+function drawBikeRoutes(map) {
+    document.getElementById('showBike').addEventListener("click", function() {
+        var bikeRouteLayer = new google.maps.BicyclingLayer
+        bikeRouteLayer.setMap(map);
+    });
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
