@@ -1,4 +1,6 @@
 // This is where I instantiate the map:
+var bikeRouteButtonState = '';
+
 function initialize() {
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 11,
@@ -18,6 +20,7 @@ function initialize() {
 
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
+  bikeRouteButtonState = 'unclicked';
   drawBikeRoutes(map);
 
 //   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
@@ -89,8 +92,14 @@ function drawMarkers(map) {
 // TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
 function drawBikeRoutes(map) {
     document.getElementById('showBike').addEventListener("click", function() {
-        var bikeRouteLayer = new google.maps.BicyclingLayer;
-        bikeRouteLayer.setMap(map);
+        if(bikeRouteButtonState === 'unclicked') {
+            var bikeRouteLayer = new google.maps.BicyclingLayer;
+            bikeRouteLayer.setMap(map);
+            bikeRouteButtonState === 'clicked';
+        }else if(bikeRouteButtonState === 'clicked') {
+            bikeRouteLayer.setMap(null);
+            bikeRouteButtonState === 'unclicked';
+        }
     });
 }
 
