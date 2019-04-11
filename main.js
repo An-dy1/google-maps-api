@@ -90,8 +90,17 @@ function drawMarkers(map) {
 }
 
 // TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
+// TODO: change the text within the button so that it appears as "show" or "hide"
 function drawBikeRoutes(map) {
-    document.getElementById('showBike').addEventListener("click", function() {
+    var bikeButton = document.getElementById('showBike');
+    bikeButton.addEventListener("click", function() {
+        // if(bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
+        //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
+        // } else {
+        //     bikeButton.setAttribute("data-text-original", button.innerHTML);
+        //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
+        // }
+
         if(bikeRouteButtonState === 'unclicked') {
             var bikeRouteLayer = new google.maps.BicyclingLayer;
             bikeRouteLayer.setMap(map);
@@ -100,7 +109,7 @@ function drawBikeRoutes(map) {
             bikeRouteLayer.setMap(null);
             bikeRouteButtonState === 'unclicked';
         }
-    });
+    }, false);
 }
 
 // google.maps.event.addDomListener(window, "load", initialize());
