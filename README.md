@@ -1,8 +1,8 @@
 <h1>Snapshots</h1>
 
 <h3>11 April - afternoon</h3>
-![11 April](./images/11-april-1.png)
-![11 April 2](./images/11-april-2.png)
+![11 April](/images/11-april-1.png)
+![11 April 2](/images/11-april-2.png)
 
 <h1>My notes on using the Google Maps JS API</h1>
 
