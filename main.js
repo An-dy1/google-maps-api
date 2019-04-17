@@ -18,11 +18,11 @@ function initialize() {
   var latLong = new google.maps.LatLng(39.1097, -94.5786);
   map.setCenter(latLong);
 
-  drawMarkers(map);
-  changeTerrain(map); // this is called addButtons(map) in the tutorial
-
+  // this is called addButtons(map) in the tutorial
+  changeTerrain(map);
   // bikeRouteButtonState = 'unclicked';
-  // drawBikeRoutes(map);
+  drawBikeRoutes(map);
+  drawMarkers(map);
 
 //   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
 //   addKmlLayer(map);
@@ -132,13 +132,10 @@ function drawMarkers(map) {
 }
 
 function drawBikeRoutes(map) {
-  console.log("made it to this function");
-  var bikeRouteLayer = new google.maps.BicyclingLayer;
-  bikeRouteLayer.setMap(map);
-  // document.getElementById('showBike').addEventListener("click", function() {
-  //     var bikeRouteLayer = new google.maps.BicyclingLayer;
-  //     bikeRouteLayer.setMap(map);
-  // });
+  document.getElementById('showBike').addEventListener("click", function() {
+      var bikeRouteLayer = new google.maps.BicyclingLayer;
+      bikeRouteLayer.setMap(map);
+  });
 };
 
 
