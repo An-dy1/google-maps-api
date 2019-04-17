@@ -21,8 +21,8 @@ function initialize() {
   drawMarkers(map);
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
-  bikeRouteButtonState = 'unclicked';
-  drawBikeRoutes(map);
+  // bikeRouteButtonState = 'unclicked';
+  // drawBikeRoutes(map);
 
 //   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
 //   addKmlLayer(map);
@@ -131,11 +131,24 @@ function drawMarkers(map) {
   return markerCluster;
 }
 
+function drawBikeRoutes(map) {
+  console.log("made it to this function");
+  var bikeRouteLayer = new google.maps.BicyclingLayer;
+  bikeRouteLayer.setMap(map);
+  // document.getElementById('showBike').addEventListener("click", function() {
+  //     var bikeRouteLayer = new google.maps.BicyclingLayer;
+  //     bikeRouteLayer.setMap(map);
+  // });
+};
+
+
 // TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
 // TODO: change the text within the button so that it appears as "show" or "hide"
-function drawBikeRoutes(map) {
-    var bikeButton = document.getElementById('showBike');
-    bikeButton.addEventListener("click", function() {
+// function drawBikeRoutes(map) {
+//     var bikeButton = document.getElementById('showBike');
+//     bikeButton.addEventListener("click", function() {
+//       var bikeRouteLayer = new google.maps.BicyclingLayer;
+//       bikeRouteLayer.setMap(map);
         // if(bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
         //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
         // } else {
@@ -143,16 +156,16 @@ function drawBikeRoutes(map) {
         //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
         // }
 
-        if(bikeRouteButtonState === 'unclicked') {
-            var bikeRouteLayer = new google.maps.BicyclingLayer;
-            bikeRouteLayer.setMap(map);
-            bikeRouteButtonState === 'clicked';
-        }else if(bikeRouteButtonState === 'clicked') {
-            bikeRouteLayer.setMap(null);
-            bikeRouteButtonState === 'unclicked';
-        }
-    }, false);
-}
+        // if(bikeRouteButtonState === 'unclicked') {
+        //     var bikeRouteLayer = new google.maps.BicyclingLayer;
+        //     bikeRouteLayer.setMap(map);
+        //     bikeRouteButtonState === 'clicked';
+        // }else if(bikeRouteButtonState === 'clicked') {
+        //     bikeRouteLayer.setMap(null);
+        //     bikeRouteButtonState === 'unclicked';
+        // }
+//     });
+// }
 
 // google.maps.event.addDomListener(window, "load", initialize());
 document.addEventListener("load", initialize());
