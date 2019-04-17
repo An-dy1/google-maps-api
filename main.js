@@ -53,7 +53,8 @@ function drawMarkers(map) {
   var image = "./images/new-skateboard.png";
 
   var mackenContentString = '<p>Macken Park in North Kansas City<br>' +
-  'has a nice paved wheel track, probably a<br>half mile long.</p>';
+  'has a nice paved wheel track, probably a<br>half mile long.</p>'+
+  '<img src="./images/mackenWheelPark.jpg" alt="Macken Wheel Park" height=50% width=50% />';
 
   var mackenInfoWindow = new google.maps.InfoWindow({
     content: mackenContentString
