@@ -1,5 +1,6 @@
 // This is where I instantiate the map:
-var bikeRouteButtonState = '';
+var bikeRouteButtonState = 0;
+var bikeRouteLayer = new google.maps.BicyclingLayer;
 
 function initialize() {
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -20,7 +21,6 @@ function initialize() {
 
   // this is called addButtons(map) in the tutorial
   changeTerrain(map);
-  // bikeRouteButtonState = 'unclicked';
   drawBikeRoutes(map);
   drawMarkers(map);
 
@@ -34,9 +34,15 @@ function initialize() {
 // this changeTerrain function receives the map object created in the initialize function
 function changeTerrain(map) {
   // goal with this function: link buttons with event handlers and sets map type appropriately
-  document.getElementById("btnRoadmap").addEventListener("click", function() {
-    map.setMapTypeId("roadmap");
+  // document.getElementById("btnRoadmap").addEventListener("click", function() {
+  //   map.setMapTypeId("roadmap");
+  // });
+
+  // Do this with DOM listener:
+  google.maps.event.addDomListener(btnTerrain, "click", function(){
+    map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
   });
+
   document.getElementById("btnTerrain").addEventListener("click", function() {
     map.setMapTypeId("terrain");
   });
@@ -133,8 +139,15 @@ function drawMarkers(map) {
 
 function drawBikeRoutes(map) {
   document.getElementById('showBike').addEventListener("click", function() {
-      var bikeRouteLayer = new google.maps.BicyclingLayer;
+    console.log(bikeRouteButtonState);
+    if(bikeRouteButtonState === 0){
+      console.log("made it to the thing");
       bikeRouteLayer.setMap(map);
+      bikeRouteButtonState += 1;
+    }else{
+      bikeRouteLayer.setMap(null);
+      bikeRouteButtonState -= 1;
+    }
   });
 };
 
