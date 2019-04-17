@@ -91,6 +91,12 @@ function drawMarkers(map) {
     tonkaInfoWindow.open(map, tonkaMarker);
   });
 
+  var cliffContentString = '<p>Cliff Drive. Nuf said.</p>';
+
+  var cliffInfoWindow = new google.maps.InfoWindow({
+    content: cliffContentString
+  });
+
   var cliffMarker = new google.maps.Marker({
     icon: image,
     position: new google.maps.LatLng(39.11583, -94.545145),
@@ -98,6 +104,16 @@ function drawMarkers(map) {
     title: "Cliff Drive"
   });
   markers.push(cliffMarker);
+  cliffMarker.addListener('click', function(){
+    cliffInfoWindow.open(map, cliffMarker)
+  });
+
+  var smithvilleContentString = '<p>Multi-mile paved bike trails<br>' +
+  'surrounding the lake.</p>';
+
+  var smithvilleInfoWindow = new google.maps.InfoWindow({
+    content: smithvilleContentString
+  });
 
   var smithvilleMarker = new google.maps.Marker({
     icon: image,
@@ -106,6 +122,9 @@ function drawMarkers(map) {
     title: "Smithville paved trails"
   });
   markers.push(smithvilleMarker);
+  smithvilleMarker.addListener('click', function(){
+    smithvilleInfoWindow.open(map, smithvilleMarker)
+  });
 
   var markerCluster = new MarkerClusterer(map, markers);
   return markerCluster;

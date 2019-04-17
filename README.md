@@ -1,3 +1,12 @@
+<h1>Next level goals</h1>
+- Improve styling
+- Automatically close info windows on next click
+- Store data for markers in a json file
+- Give users the ability to add a location on the map with info window
+- Before publishing a new card, require checking
+- Improve button styling
+- Figure out weird console error on MarkerClusterer
+
 <h1>Snapshots</h1>
 
 <h3>11 April - afternoon</h3>
