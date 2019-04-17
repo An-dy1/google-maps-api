@@ -15,9 +15,9 @@ function initialize() {
   });
 
   var latLong = new google.maps.LatLng(39.1097, -94.5786);
-
   map.setCenter(latLong);
 
+  drawMarkers(map);
   changeTerrain(map); // this is called addButtons(map) in the tutorial
 
   bikeRouteButtonState = 'unclicked';
@@ -26,7 +26,7 @@ function initialize() {
 //   Maybe do this for the Line Creek trail if I can find KML data for it: see README.md for the way
 //   addKmlLayer(map);
 
-  drawMarkers(map);
+  addGoToInitialExtent(map, latLong, initialZoom);
 
 } // end function initialize
 

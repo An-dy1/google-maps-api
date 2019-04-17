@@ -228,3 +228,28 @@ function addGeoJSONDataLayer(map) {
     })
 }
 ```
+
+<h2>Event Handling</h2>
+
+<h4>The Google Maps JS API-approved way to add an event listener:</h4>
+
+```
+google.maps.event.addListener(
+    marker,
+    "click",
+    function(){
+        alert("Done clicked it now");
+    }
+);
+```
+
+<h4>Code that doesn't work to add a right click event listener to the map and set the map back to original bounds</h4>
+
+```
+function addGoToInitialExtent(map, latLong, initialZoom) {
+  google.maps.event.addListener(map, 'click', function(){
+    map.setCenter(latLong);
+    map.setZoom(initialZoom);
+  });
+}
+```
