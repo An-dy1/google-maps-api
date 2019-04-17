@@ -25,17 +25,26 @@ body {
     margin-left: 25vw;
 }
 
-#navbar {
+.header {
+    margin-bottom: 5rem;
+}
+
+.navigation {
     display: flex;
     justify-content: center;
 }
+
+/* #navbar {
+    display: flex;
+    justify-content: center;
+} */
 
 .title {
     color: #fff;
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
     font-size: 56px;
-    margin: 5rem;
+    margin-top: 5rem;
     text-shadow: 6px 6px #3D3C53;
 }
 

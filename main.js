@@ -14,6 +14,7 @@ function initialize() {
     overviewMapControl: true
   });
 
+  // I don't remember why I wasn't able to just setCenter in the map initializing stuff
   var latLong = new google.maps.LatLng(39.1097, -94.5786);
   map.setCenter(latLong);
 
@@ -51,6 +52,13 @@ function drawMarkers(map) {
   var markers = [];
   var image = "./images/new-skateboard.png";
 
+  var mackenContentString = '<p>Macken Park in North Kansas City<br>' +
+  'has a nice paved wheel track, probably a<br>half mile long.</p>';
+
+  var mackenInfoWindow = new google.maps.InfoWindow({
+    content: mackenContentString
+  });
+
   var mackenMarker = new google.maps.Marker({
     icon: image,
     position: new google.maps.LatLng(39.148627, -94.567244),
@@ -60,6 +68,17 @@ function drawMarkers(map) {
   markers.push(mackenMarker);
   // Another way to do this:
   // mackenMarker.setMap(map);
+  mackenMarker.addListener('click', function() {
+    mackenInfoWindow.open(map, mackenMarker);
+  });
+
+  var tonkaContentString = '<p>The parking lot of Winnetonka High School<br>' +
+  'when not in use by high school students<br>' +
+  'has a lovely slope to it.</p>';
+
+  var tonkaInfoWindow = new google.maps.InfoWindow({
+    content: tonkaContentString
+  });
 
   var tonkaMarker = new google.maps.Marker({
     icon: image,
@@ -68,6 +87,9 @@ function drawMarkers(map) {
     title: "Winnetonka HS parking lot"
   });
   markers.push(tonkaMarker);
+  tonkaMarker.addListener('click', function(){
+    tonkaInfoWindow.open(map, tonkaMarker);
+  });
 
   var cliffMarker = new google.maps.Marker({
     icon: image,
