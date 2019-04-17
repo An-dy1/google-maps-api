@@ -33,6 +33,10 @@ function initialize() {
 
 // this changeTerrain function receives the map object created in the initialize function
 function changeTerrain(map) {
+
+  /* 
+  * First way to do this
+  */
   // goal with this function: link buttons with event handlers and sets map type appropriately
   // document.getElementById("btnRoadmap").addEventListener("click", function() {
   //   map.setMapTypeId("roadmap");
@@ -138,44 +142,27 @@ function drawMarkers(map) {
 }
 
 function drawBikeRoutes(map) {
-  document.getElementById('showBike').addEventListener("click", function() {
-    console.log(bikeRouteButtonState);
+  var bikeButton = document.getElementById('showBike')
+  bikeButton.addEventListener("click", function() {
     if(bikeRouteButtonState === 0){
-      console.log("made it to the thing");
       bikeRouteLayer.setMap(map);
       bikeRouteButtonState += 1;
+      if (bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
+        bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
+        console.log("if show" + bikeButton.innerHTML)
+      };
+      // bikeButton.setAttribute("data-text-swap", bikeButton.innerHTML);
+      // bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
+      // console.log("if show" + bikeButton.innerHTML);
     }else{
       bikeRouteLayer.setMap(null);
       bikeRouteButtonState -= 1;
+      bikeButton.setAttribute("data-text-original", bikeButton.innerHTML);
+      bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
+      console.log("if hide" + bikeButton.innerHTML);
     }
-  });
+  }, false);
 };
-
-
-// TODO: add a state, so that if the button is clicked and bike routes are already shown, it removes the bike routes
-// TODO: change the text within the button so that it appears as "show" or "hide"
-// function drawBikeRoutes(map) {
-//     var bikeButton = document.getElementById('showBike');
-//     bikeButton.addEventListener("click", function() {
-//       var bikeRouteLayer = new google.maps.BicyclingLayer;
-//       bikeRouteLayer.setMap(map);
-        // if(bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
-        //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
-        // } else {
-        //     bikeButton.setAttribute("data-text-original", button.innerHTML);
-        //     bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
-        // }
-
-        // if(bikeRouteButtonState === 'unclicked') {
-        //     var bikeRouteLayer = new google.maps.BicyclingLayer;
-        //     bikeRouteLayer.setMap(map);
-        //     bikeRouteButtonState === 'clicked';
-        // }else if(bikeRouteButtonState === 'clicked') {
-        //     bikeRouteLayer.setMap(null);
-        //     bikeRouteButtonState === 'unclicked';
-        // }
-//     });
-// }
 
 // google.maps.event.addDomListener(window, "load", initialize());
 document.addEventListener("load", initialize());
