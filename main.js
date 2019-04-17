@@ -1,6 +1,7 @@
 // This is where I instantiate the map:
 var bikeRouteButtonState = 0;
 var bikeRouteLayer = new google.maps.BicyclingLayer;
+var bikeButton = document.getElementById('showBike');
 
 function initialize() {
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -141,25 +142,36 @@ function drawMarkers(map) {
   return markerCluster;
 }
 
+function swapBikeButtonText() {
+  if (bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
+    bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
+  } else {
+    bikeButton.setAttribute("data-text-original", bikeButton.innerHTML);
+    bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
+    console.log('made it here at least');
+  }
+};
+
 function drawBikeRoutes(map) {
-  var bikeButton = document.getElementById('showBike')
   bikeButton.addEventListener("click", function() {
     if(bikeRouteButtonState === 0){
       bikeRouteLayer.setMap(map);
       bikeRouteButtonState += 1;
-      if (bikeButton.getAttribute("data-text-swap") == bikeButton.innerHTML) {
-        bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
-        console.log("if show" + bikeButton.innerHTML)
-      };
+      swapBikeButtonText();
+      // if (bikeButton.setAttribute("data-text-swap", bikeButton.innerHTML) == bikeButton.innerHTML) {
+      //   bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
+      //   console.log("if show" + bikeButton.innerHTML)
+      // };
       // bikeButton.setAttribute("data-text-swap", bikeButton.innerHTML);
       // bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
       // console.log("if show" + bikeButton.innerHTML);
     }else{
       bikeRouteLayer.setMap(null);
       bikeRouteButtonState -= 1;
-      bikeButton.setAttribute("data-text-original", bikeButton.innerHTML);
-      bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
-      console.log("if hide" + bikeButton.innerHTML);
+      swapBikeButtonText();
+      // bikeButton.setAttribute("data-text-original", bikeButton.innerHTML);
+      // bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
+      // console.log("if hide" + bikeButton.innerHTML);
     }
   }, false);
 };
