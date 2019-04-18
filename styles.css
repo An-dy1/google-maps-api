@@ -34,6 +34,59 @@ body {
     justify-content: center;
 }
 
+.navButton {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    color: #ffffff;
+    font-family: Ubuntu;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.navButton:hover,
+.navButton:focus {
+    background: rgba(73, 70, 130, 0.5);
+    border-radius: 25px;
+    transform: scale(1.1);
+}
+
+.navButton:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.navButton:active {
+    transform: scale(0.92);
+}
+
+.mapTypeButton {
+    display: inline-block;
+    border: none;
+    /* border-radius: 10px; */
+    padding: 0.5rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    background: #f4f1bb;
+    color: #494682;
+    font-family: Ubuntu;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 /* #navbar {
     display: flex;
     justify-content: center;
@@ -96,4 +149,10 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.moonMoon {
+    position: relative;
+    bottom: 0;
+    right: 0;
 }

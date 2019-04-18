@@ -6,6 +6,7 @@
 - Before publishing a new card, require checking
 - Improve button styling
 - Figure out weird console error on MarkerClusterer
+- Bike routes don't show up on Satellite mode
 
 <h1>Snapshots</h1>
 

@@ -44,8 +44,8 @@ function changeTerrain(map) {
   // });
 
   // Do this with DOM listener:
-  google.maps.event.addDomListener(btnTerrain, "click", function(){
-    map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+  google.maps.event.addDomListener(btnRoadmap, "click", function(){
+    map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
   });
 
   document.getElementById("btnTerrain").addEventListener("click", function() {
@@ -60,6 +60,7 @@ function changeTerrain(map) {
 } // end function changeTerrain
 
 function drawMarkers(map) {
+  let markerClusterer;
   var markers = [];
   var image = "./images/new-skateboard.png";
 
@@ -158,20 +159,10 @@ function drawBikeRoutes(map) {
       bikeRouteLayer.setMap(map);
       bikeRouteButtonState += 1;
       swapBikeButtonText();
-      // if (bikeButton.setAttribute("data-text-swap", bikeButton.innerHTML) == bikeButton.innerHTML) {
-      //   bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
-      //   console.log("if show" + bikeButton.innerHTML)
-      // };
-      // bikeButton.setAttribute("data-text-swap", bikeButton.innerHTML);
-      // bikeButton.innerHTML = bikeButton.getAttribute("data-text-original");
-      // console.log("if show" + bikeButton.innerHTML);
     }else{
       bikeRouteLayer.setMap(null);
       bikeRouteButtonState -= 1;
       swapBikeButtonText();
-      // bikeButton.setAttribute("data-text-original", bikeButton.innerHTML);
-      // bikeButton.innerHTML = bikeButton.getAttribute("data-text-swap");
-      // console.log("if hide" + bikeButton.innerHTML);
     }
   }, false);
 };
