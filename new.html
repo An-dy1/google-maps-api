@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>About me</title>
+    <meta name="about" content="Who I am and why I made this site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Ubuntu"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="normalize" href="normalize.css" />
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVzwG8Zv8woCdsnD01U95sa59nUDS5DnU&callback=initMap"
+    ></script>
+  </head>
+</html>
+
+<body>
+  <div>
+    <input
+      id="address"
+      type="text"
+      value="Kansas City, MO"
+      style="width:300px"
+    />
+    <input type="button" value="Geocode it" onclick="geocodeAddress()" />
+  </div>
+
+  <div id="newCoords"></div>
+
+  <script src="main.js"></script>
+</body>

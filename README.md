@@ -11,6 +11,7 @@
 - Add an animation? Why not!
 - Refactor for React
 - Figure out moon positioning
+- Figure out necessity of global variables in script
 
 <h1>Snapshots</h1>
 
@@ -280,3 +281,9 @@ function addGoToInitialExtent(map, latLong, initialZoom) {
 <ul>
     <li><a href="https://css-tricks.com/swapping-out-text-five-different-ways/">CSS Tricks article</a> on switching text on a button click event (I used this on my "Show Bike Routes" button).</li>
 </ul>
+
+<h1>Using services to extend functionality</h1>
+
+<h3>The Geocoding API</h3>
+
+- Geocoding is the process of translating an address to a set of coordinates, or vice versa
