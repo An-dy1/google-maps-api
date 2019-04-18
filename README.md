@@ -293,3 +293,42 @@ function addGoToInitialExtent(map, latLong, initialZoom) {
 <h3>The Directions Service</h3>
 
 <h5>A callback is a function passed as a parameter to the call to a service. It gets executed by the service when it completes its task. The service passes the results back as parameters to the callback function.<h5>
+
+<p>The HTML needed(in the same div as the map span):</p>
+
+```
+<div>
+    <input id="start" type="textbox" value="" style="width:300px;" />
+    <input type="button" value="Get Route" onclick="calcRoute()" />
+</div>
+<div id="directionsPanel" style="float:right;width:30%;height:100%"></div>
+```
+
+<p>The javascript needed:</p>
+
+```
+
+function calcRoute() {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay;
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+
+  var start = document.getElementById('start').value;
+  var end = new google.maps.LatLng(39.148627, -94.567244);
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  
+  directionsService.route(request, function (result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    } else {
+      alert("Hmm, something went wrong.")
+    }
+  });
+}
+```
