@@ -7,9 +7,10 @@
 - Improve button styling
 - Figure out weird console error on MarkerClusterer
 - Bike routes don't show up on Satellite mode
-- Make menu responsive
+- Make menu/page responsive
 - Add an animation? Why not!
 - Refactor for React
+- Figure out moon positioning
 
 <h1>Snapshots</h1>
 
@@ -277,5 +278,5 @@ function addGoToInitialExtent(map, latLong, initialZoom) {
 <p>An inexhaustive list I only started halfway through the project of resources I've found helpful.</p>
 
 <ul>
-    <li><a href="https://css-tricks.com/swapping-out-text-five-different-ways/">CSS Tricks article on switching text on a button click event(I used this on my "Show Bike Routes" button.</li>
+    <li><a href="https://css-tricks.com/swapping-out-text-five-different-ways/">CSS Tricks article</a> on switching text on a button click event (I used this on my "Show Bike Routes" button).</li>
 </ul>
