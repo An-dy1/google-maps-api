@@ -7,9 +7,12 @@
     <title>Map Practice</title>
     <meta name="description" content="Making an app with Google Maps API" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Ubuntu" rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Ubuntu"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="normalize" href="normalize.css">
+    <link rel="normalize" href="normalize.css" />
     <!-- 1. Access Google Maps JS API -->
     <script
       type="text/javascript"
@@ -18,13 +21,16 @@
   </head>
 
   <body>
-
     <div class="header">
       <div class="titleBanner">
         <h1 class="title">Longboard Locales - KC</h1>
       </div>
       <div class="navigation">
-        <a class="navButton" href="https://burningspiderstokecompany.com/learn-to-longboard/">Learn to longboard</a>
+        <a
+          class="navButton"
+          href="https://burningspiderstokecompany.com/learn-to-longboard/"
+          >Learn to longboard</a
+        >
         <a class="navButton" href="./about.html">About</a>
         <a class="navButton" href="./new.html">Add location</a>
       </div>
@@ -36,8 +42,19 @@
         <button id="btnTerrain" class="mapTypeButton">Terrain</button>
         <button id="btnSatellite" class="mapTypeButton">Satellite</button>
         <button id="btnHybrid" class="mapTypeButton">Mash up</button>
-        <button id="showBike" class="mapTypeButton" data-text-swap="Hide bike routes">Show Bike Routes</button>
+        <button
+          id="showBike"
+          class="mapTypeButton"
+          data-text-swap="Hide bike routes"
+        >
+          Show Bike Routes
+        </button>
       </div>
+      <div>
+        <input id="start" type="textbox" value="" style="width:300px;" />
+        <input type="button" value="Get Route" onclick="calcRoute()" />
+      </div>
+      <div id="directionsPanel" style="float:right;width:30%;height:100%"></div>
       <!-- So weird: this doesn't work if I put the mapDiv in another div -->
       <span class="mapSpan">
         <!-- 2. Make a div to hold my map -->
@@ -47,16 +64,26 @@
 
     <div class="footer">
       <div class="footerText">
-        <p>Made with <span class="heart">&#9829;</span> by <a href="https://github.com/An-dy1" class="footerLink">Andy in Kansas City</a></p>
+        <p>
+          Made with <span class="heart">&#9829;</span> by
+          <a href="https://github.com/An-dy1" class="footerLink"
+            >Andy in Kansas City</a
+          >
+        </p>
       </div>
       <div class="devTo">
         <a href="https://dev.to/andy1">
-          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Andy's DEV Profile" height="30" width="30" />
+          <img
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="Andy's DEV Profile"
+            height="30"
+            width="30"
+          />
         </a>
       </div>
       <div class="badge moonImage">
         <a href="#">
-          <img src="./images/icons8-moon-and-stars-64.png"/>
+          <img src="./images/icons8-moon-and-stars-64.png" />
         </a>
       </div>
     </div>

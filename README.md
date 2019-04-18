@@ -12,6 +12,7 @@
 - Refactor for React
 - Figure out moon positioning
 - Figure out necessity of global variables in script
+- Separate styles into individaul page files?
 
 <h1>Snapshots</h1>
 
@@ -287,3 +288,8 @@ function addGoToInitialExtent(map, latLong, initialZoom) {
 <h3>The Geocoding API</h3>
 
 - Geocoding is the process of translating an address to a set of coordinates, or vice versa
+- See new.html page and main.js
+
+<h3>The Directions Service</h3>
+
+<h5>A callback is a function passed as a parameter to the call to a service. It gets executed by the service when it completes its task. The service passes the results back as parameters to the callback function.<h5>

@@ -185,5 +185,29 @@ function geocodeAddress() {
   });
 }
 
+function calcRoute() {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay;
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+
+  var start = document.getElementById('start').value;
+  var end = new google.maps.LatLng(39.148627, -94.567244);
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  
+  directionsService.route(request, function (result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    } else {
+      alert("Hmm, something went wrong.")
+    }
+  });
+}
+
 // google.maps.event.addDomListener(window, "load", initialize());
 document.addEventListener("load", initialize());
