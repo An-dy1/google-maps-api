@@ -292,7 +292,7 @@ function addGoToInitialExtent(map, latLong, initialZoom) {
 
 <h3>The Directions Service</h3>
 
-<h5>A callback is a function passed as a parameter to the call to a service. It gets executed by the service when it completes its task. The service passes the results back as parameters to the callback function.<h5>
+<h5>A callback is a function passed as a parameter to the call to a service. It gets executed by the service when it completes its task. The service passes the results back as parameters to the callback function.</h5>
 
 <p>The HTML needed(in the same div as the map span):</p>
 
